@@ -10,9 +10,9 @@
 
         <nav class="outer-container">
             <ul>
-                <li><a href="#">Case Studies</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <a href="#projecten"><li>Case Studies</li></a>
+                <a href="#services"><li>Services</li></a>
+                <a href="#contact"><li>Contact Us</li></a>
             </ul>
         </nav>
 
@@ -20,7 +20,7 @@
             <div class="inner-container-small header-content">
                 <h1>Your website is an investment in the success of your business.</h1>
                 <p>We are here to help you succeed.</p>
-                <button>Let's work together</button>
+                <a href="#contact"><button>Let's work together</button></a>
             </div>
             <div class="header-image-container">
                 <img src="./assets/squiggle_line_stripe.svg" alt="squiggle line stripe">
@@ -34,12 +34,12 @@
                 <h2>Rekupe is a digital agency in Los Angeles.</h2>
                 <h2> We use strategic UX, SEO optimization and beautiful visual designs to help your business grow.</h2>
                 <h2>We see every project as a fresh opportunity, pushing ourselves to create new digital experiences.</h2>
-                <p>Have a question? <a href="#">Click Here</a> to contact us!</p>
+                <p>Have a question? <a href="#contact">Click Here</a> to contact us!</p>
             </div>
             <div class="triangle-section-divider"></div>
         </section>
         
-        <section class="outer-container section-projects">
+        <section class="outer-container section-projects" id="projecten">
             <div class="inner-container">
 
                 <article class="project-article-container">
@@ -148,9 +148,44 @@
             </div>
             <div class="triangle-section-divider-reversed"></div>
         </section>
+
+        <section class="outer-container section-form" id="contact">
+            <div class="triangle-section-divider-reversed"></div>
+            <div class="inner-container-small">
+                <h2>Let's work together</h2>
+                <p>Have a question? Need a quote? Let us know!</p>
+                <form action="#">
+                    <label for="name">Name
+                        <input type="text"
+                               id="name"
+                               name="name"
+                               required
+                               placeholder="Name">
+                    </label>
+                    <label for="email">Email
+                        <input type="email"
+                               id="email"
+                               name="email"
+                               required
+                               placeholder="Email">
+                    </label>
+                    <label for="message">Message
+                        <textarea
+                                id="message"
+                                name="message"
+                                placeholder="Message"
+                                rows="8"
+                                cols="20"
+                                required></textarea>
+                    </label>
+                    <button type="submit">SEND</button>
+                </form>
+            </div>
+        </section>
+
     </main>
     <footer>
-        <p></p>
+        <small>Business website opdracht © NOVI Hogeschool 2022</small>
     </footer>
 </body>
 </html>

@@ -24,6 +24,7 @@
     box-sizing: border-box;
 }
 :root {
+    --wit: #fff;
     --paars: #5722CD;
     --blauw: #4845E4;
     --roze :#ED4385;
@@ -53,11 +54,12 @@ body {
     overflow: hidden;
 }
 h1 {
-   font-size: 2.5em;
+   font-size: 2.3em;
 }
 h2, h4 {
     color: var(--paars);
 }
+
 h3 {
     font-size: 1.6em;
     font-weight: 400;
@@ -73,36 +75,86 @@ h4 {
     flex-direction: row;
     width: 100%;
     justify-content: center;
-    border: solid 5px brown;
+    /*border: solid 5px brown;*/
     position: relative;
 }
 
 .inner-container {
     display: flex;
     flex-direction: column;
-    border: dashed 5px coral;
+    /*border: dashed 5px coral;*/
     flex-basis: 1200px;
-    margin: 0 10px;
+    margin: 0 20px;
 }
 .inner-container-small {
     display: flex;
     flex-direction: column;
-    border: dashed 5px coral;
+    /*border: dashed 5px coral;*/
     flex-basis: 800px;
-    margin:0 10px;
+    margin:0 20px;
     gap: 20px;
     text-align: center;
 }
 .triangle-section-divider {
-        position: absolute;
-        bottom: 0;
-        width: 0;
-        height: 0;
-        border-right: 100vw solid transparent;
-        border-bottom: var(--triangle-height) solid white;
-    }
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-right: 100vw solid transparent;
+    border-bottom: var(--triangle-height) solid white;
+}
 
-/*------link hover effect--------*/
+.triangle-section-divider-reversed {
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-right: 100vw solid transparent;
+    border-bottom: var(--triangle-height) solid var(--wit);
+    transform: rotate(180deg);
+}
+
+button {
+    padding: 18px 30px;
+    font-size: .7em;
+    background-color: var(--roze);
+    color: var(--wit);
+    width: max-content;
+    margin: 0 auto 30px auto;
+    border-radius: 50px;
+    border: none;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, .5);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all .1s;
+}
+button:active {
+    scale: 0.97;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, .5);
+}
+/*--nav-link hover effect--*/
+
+nav li {
+    position: relative;
+    padding: 10px 0;
+}
+
+nav li:before {
+    content: "";
+    width: 0;
+    height: 4px;
+    top: 80%;
+    left: 0;
+    background-color: var(--roze);
+    position: absolute;
+    border-radius: 10%;
+    transition: all .2s linear;
+}
+nav li:hover:before {
+    width: 70%;
+}
+
+/*--link hover effect--*/
 .link-wrapper {
     font-size: .7em;
     text-transform: uppercase;
@@ -136,29 +188,29 @@ h4 {
 header {
     background: var(--blauw);
     background: linear-gradient(130deg, rgba(72, 69, 228, 1) 0%, rgba(87, 34, 205, 1) 100%);
-    color: white;
+    color: var(--wit);
     position: relative;
 }
 nav {
-    border: solid yellow 5px;
+    padding-left: 20px;
+    padding-right: 20px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 15px 0;
 }
 ul {
-    border: solid lightblue 5px;
+    /*border: solid lightblue 5px;*/
     display: flex;
     flex-basis: 1200px;
     justify-content: flex-end;
     align-items: center;
-    gap: 20px;
+    gap: 40px;
     list-style: none;
-    margin: 0 10px
+    margin: 10px 10px
 }
-li a {
-    color: white;
+nav a {
+    color: var(--wit);
     text-decoration: none;
     font-weight: 300;
     font-size: 1rem;
@@ -177,19 +229,7 @@ li a {
     font-size: 1.3em;
     font-weight: 300;
 }
-button {
-    padding: 20px 30px;
-    font-size: 1em;
-    background-color: var(--roze);
-    color: white;
-    width: max-content;
-    margin: 0 auto 30px auto;
-    border-radius: 50px;
-    border: none;
-    box-shadow: 1px 2px 10px rgba(0, 0, 0, .5);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
+
 .header-image-container {
     width: 60px;
     position: absolute;
@@ -200,8 +240,6 @@ button {
 .header-image-container > img {
     width: 100%;
 }
-
-
 /* --------------- 4.2 Introduction ------------------- */
 
 .section-intro > div:nth-of-type(1){
@@ -229,7 +267,7 @@ button {
     border-bottom: var(--triangle-height) solid var(--lichtgrijs);
 }
 
-/* --------------- 4.2 Projects ------------------------- */
+/* --------------- 4.3 Projects ------------------------- */
 .section-projects {
     background-color: var(--lichtgrijs);
     padding-top: 9em;
@@ -247,41 +285,40 @@ button {
     display: flex;
     flex-direction: row;
     align-items: center;
-    border: 3px solid blue;
     width: 100%;
     justify-content: space-around;
+    /*border: 3px solid blue;*/
 
 }
 
-/* -------  card content   ------- */
+/* --  card content  -- */
 .project-content-container {
     display: flex;
     flex-shrink: 1;
     flex-grow: 0;
     flex-basis: 380px;
     flex-direction: column;
-    border: 3px solid red;
     justify-content: space-between;
     align-items: flex-start;
     margin: 0 40px 0 20px;
     height: 200px;
     z-index: 1;
     position: relative;
+    /*border: 3px solid red;*/
 }
 .card-content-image {
     width: 40px;
-    /*border: 1px solid yellow;*/
     position:absolute;
     top: 40px;
+    /*border: 1px solid yellow;*/
 }
 .article-content-image {
-    /*border: solid 3px green;*/
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 1px 10px 20px rgba(0, 0, 0, 0.4);
     flex-basis: 650px;
     flex-shrink: 2;
     z-index: 1;
     margin: 30px 0;
-
+    /*border: solid 3px green;*/
 }
 
 .card-content-image img, .article-content-image img {
@@ -290,7 +327,6 @@ button {
     object-position: center;
 }
 
-
 .project-article-container:nth-child(even) {
     display: flex;
     flex-direction: row-reverse;
@@ -298,7 +334,6 @@ button {
 .project-article-container:nth-child(even) > .project-content-container {
     margin: 0 20px 0 40px;
 }
-
 
 .section-projects > .inner-container{
     position: relative;
@@ -309,7 +344,7 @@ button {
     width: max-content;
     height: max-content;
     font-weight: 900;
-    color: white;
+    color: var(--wit);
     z-index: 0;
     position: absolute;
     top: 0;
@@ -318,8 +353,7 @@ button {
     opacity: 70%;
 }
 
-
-/*----------   services  -----------*/
+/*---------- 4.4 services  -----------*/
 
 .section-services > .inner-container {
     margin-top: 150px;
@@ -340,10 +374,10 @@ button {
 }
 .service-card-container {
     display: flex;
-    border: 2px dashed yellowgreen;
     flex-wrap: wrap;
     gap: 30px;
     justify-content: center;
+    /*border: 2px dashed yellowgreen;*/
 }
 
 .service-card {
@@ -357,7 +391,7 @@ button {
     flex-grow: 1;
     flex-direction: column;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-    background-color: white;
+    background-color: var(--wit);
 }
 .service-card > img {
     width: 60px;
@@ -370,67 +404,193 @@ button {
     font-weight: 300;
 }
 
-.section-services > .triangle-section-divider-reversed {
-    position: absolute;
-    bottom: 0;
-    width: 0;
-    height: 0;
-    border-right: 100vw solid transparent;
-    border-bottom: var(--triangle-height) solid black;
-    transform: rotate(180deg);
+
+
+/*---------- 4.5 Form  -----------*/
+.section-form {
+    background: var(--blauw);
+    background: linear-gradient(130deg, rgba(72, 69, 228, 1) 0%, rgba(87, 34, 205, 1) 100%);
+    position: relative;
+}
+.section-form > .inner-container-small {
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.section-form > div > h2 {
+    font-size: 2em;
+    color: var(--wit);
+}
+.section-form > div > p {
+    color: var(--wit);
+    font-weight: 300;
+    font-size: .8em;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+label{
+    display: block;
+    text-align: left;
+    color: var(--wit);
+    font-weight: 700;
+    letter-spacing: 0;
+    font-size: .8em;
+}
+input, textarea {
+    width: 100%;
+    display: block;
+    border-radius: 3px;
+    padding: 15px 10px;
+    border: none;
+    resize: none;
+}
+input:focus, textarea:focus{
+    outline: 2px solid var(--roze);
+    background-color: var(--lichtpaars);
+}
+
+input::placeholder, textarea::placeholder {
+    color: var(--grijs);
+    font-size: .9em;
+}
+
+
+form > button {
+    padding: 18px 60px;
+}
+/*---------- 4.6 footer  -----------*/
+footer {
+    background-color: var(--zwart);
+    color: var(--wit);
+    text-align: center;
+    padding: 20px;
+    font-size: .9em;
+    font-weight: 300;
 }
 /* ------------------------------- 5. Media Queries -------------------------------- */
 @media  screen and (max-width: 768px) {
     body {
-        font-size: .9rem;
+        font-size: 1rem;
+    }
+    /*--header--*/
+    ul {
+        justify-content: space-evenly;
+        margin-bottom: 0;
+    }
+    nav a {
+        font-weight: 600;
+    }
+
+    header button {
+        margin-top: 10px;
+    }
+
+    /*-- introduction --*/
+    .section-intro .inner-container-small:before {
+        top: 9%;
+        scale: 12;
+        font-weight: 700;
+        letter-spacing: -1px;
+    }
+
+    /*-- projects --*/
+    .section-projects .inner-container{
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .project-article-container {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        width: 100%;
+        flex-basis: content;
+        justify-content: space-around;
+    }
+
+    .project-content-container {
+        flex-basis: 200px;
+        margin: 0;
+    }
+
+    .project-article-container:nth-of-type(1), .project-article-container:nth-of-type(2)  {
+        margin-bottom: 40px;
+    }
+
+    .article-content-image {
+        flex-basis: fit-content;
+        margin: 0 0 30px 0;
+    }
+
+    .project-article-container:nth-child(even) {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .project-article-container:nth-child(even) > .project-content-container {
+        margin: 0;
+    }
+
+    .project-article-container:before {
+        content: "Work";
+        scale: 10;
+        top: -25px;
+    }
+
+    .section-projects {
+        padding-bottom: 4em;
+    }
+    /*-- services --*/
+
+    .section-services > .inner-container:before {
+        content: "services";
+        top: -15px;
+        left: 43%;
+        scale: 6.3;
+    }
+
+    .section-services > .inner-container {
+        margin-top: 120px;
+    }
+
+    .service-card-container {
+        gap: 35px;
+    }
+
+    .service-card > img {
+        width: 60px;
+        margin-bottom: 10px;
+    }
+
+    /*-- form --*/
+    textarea {
+        min-height: 200px;
+    }
+
+    textarea, input {
+        padding: 20px;
+    }
+
+    .section-form div p {
+        font-size: 1.1em;
+        padding-bottom: 10px;
+    }
+
+    input, textarea {
+        margin-top: 2px;
+    }
+
+    form button {
+        margin-top: 15px;
+        margin-bottom: 0;
+
+    }
+    .section-form {
+        margin-bottom: 0;
     }
 }
 
-/*Dummy tekst*/
-/*Your website is an investment in the success of your business.*/
-/*We are here to help you succeed.*/
-
-/*Let's work together*/
-
-/*Hello*/
-/*Rekupe is a digital agency in Los Angeles. We use strategic UX, SEO optimization and beautiful visual designs to help your business grow. We see every project as a fresh opportunity, pushing ourselves to create new digital experiences. Have a question? Click here to contact us!*/
-
-/*Work*/
-/*Rolling Stone*/
-
-/*You know Rolling Stone. It’s the definitive voice in music, politics and culture. It’s a global icon.*/
-
-/*Variety*/
-
-/*Variety is an industry leader for breaking entertainment news, reviews and box office results with archive of content dating back to 1905.*/
-
-/*                                                                                                                                         Worth*/
-
-/*                                                                                                                                         A global media platform connecting a community that embraces worth beyond wealth.*/
-
-/*                                                                                                                                         Services*/
-/*                                                                                                                                         Web Design Good web design is how companies stand out from their competitors. High quality web design leads to increased user conversion and engagement. Through a proven web design process, we help clients launch websites and products that improve on their bottom line.*/
-
-/*Web Development Modern websites need to be responsive and fully functional at all sizes. We develop all of our sites with a mobile first approach and ensure that our code quality is clean, organized and performant. Already have a design but need it developed? We’re here to help!*/
-
-/*User Experience In order to build successful products you have to understand the user. We create user personas, wireframes and prototypes to test with users. This allows us to gather feedback which helps to shape the product and can quickly eliminate potential risks – saving you time and money.*/
-
-/*Logo Design + Branding Nike, Apple, Coca-Cola, Starbucks. What do all of these brands have in common? Easily recognizable logos and brand identity. The best brands stand out from the crowd by having a clear and unique point of view. We will work with you to understand your vision and help create a unique brand identity and style guide for your company.*/
-
-/*SEO Do you want your site to rank higher in search results? Google is constantly changing their algorithms for how they rank pages. Don’t worry about constantly playing catch-up. We will make sure your website it optimized, providing you the best opportunities for organic search exposure.*/
-
-/*Copy Writing Brand messaging needs to be clear, direct and easy to understand to be effective. A unique tone of voice will help you stand out from the crowd and build brand loyalty. We work with you to establish your brand bible and ensure your messaging is focused and targeted.*/
-
-/*Form*/
-/*Let's work together*/
-
-
-/*Copy Writing Brand messaging needs to be clear, direct and easy to understand to be effective. A unique tone of voice will help you stand out from the crowd and build brand loyalty. We work with you to establish your brand bible and ensure your messaging is focused and targeted.*/
-
-/*Form*/
-/*Let's work together*/
-
-/*Have a question? Need a quote? Let us know!*/
-
-/*Footer*/
-/*Business website opdracht © NOVI Hogeschool 2022*/
