@@ -5,7 +5,7 @@
     1. Global Styles
     2. Typography
     3. Layout
-        3.1 Reusables
+        3.1 reusable's
         3.2 Other
     4. Areas
         4.1 Header
@@ -23,78 +23,87 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 :root {
-    --wit: #fff;
-    --paars: #5722CD;
-    --blauw: #4845E4;
-    --roze :#ED4385;
-    --zwart: #0C0C0C; /*(voor standaard tekst);*/
-    --lichtpaars: #F2F0FF; /*(voor de grote zwevende woorden, zoals "hello" en "services") Uitzonderingen:*/
-    --lichtgrijs: #F3F6F9; /*(voor de achtergrond van de projecten)*/
-    --grijs: #7A7A7A; /*voor de service-tegel tekst)*/
+    --white: #fff;
+    --purple: #5722CD;
+    --blue: #4845E4;
+    --pink :#ED4385;
+    --black: #0C0C0C; /*(voor standaard tekst);*/
+    --lightpurple: #F2F0FF; /*(voor de grote zwevende woorden, zoals "hello" en "services") Uitzonderingen:*/
+    --lightgrey: #F3F6F9; /*(voor de achtergrond van de projecten)*/
+    --grey: #7A7A7A; /*voor de service-tegel tekst)*/
     --triangle-height: 1.8rem;
+    --triangle-height-small: 1.4rem;
 }
 
 a {
     text-decoration: none;
-    color: var(--paars);
+    color: var(--purple);
 }
-/* ------------------------------- 2. Typography ----------------------------------- */
 
+/* ------------------------------- 2. Typography ----------------------------------- */
 h1, h2, h3, h4, h5 ,h6 {
     font-family: "Merriweather", serif;
 }
+
 html {
     font-size: 1rem;
     overflow-x: hidden;
 }
+
 body {
     font-size: 1rem;
     font-family: "Roboto", sans-serif;
     overflow: hidden;
 }
+
 h1 {
    font-size: 2.3em;
 }
+
 h2, h4 {
-    color: var(--paars);
+    color: var(--purple);
 }
 
 h3 {
     font-size: 1.6em;
     font-weight: 400;
 }
+
 h4 {
     font-size: 1.2em;
 }
 /* ------------------------------- 3. Layout --------------------------------------- */
 
-/* --------------- 3.1 Reusables ----------------------- */
+/* --------------- 3.1 reusable's ----------------------- */
 .outer-container{
     display: flex;
     flex-direction: row;
     width: 100%;
     justify-content: center;
-    /*border: solid 5px brown;*/
     position: relative;
+    /*border: solid 5px brown;*/
 }
 
 .inner-container {
     display: flex;
     flex-direction: column;
-    /*border: dashed 5px coral;*/
     flex-basis: 1200px;
     margin: 0 20px;
+    /*border: dashed 5px coral;*/
 }
+
 .inner-container-small {
     display: flex;
     flex-direction: column;
-    /*border: dashed 5px coral;*/
     flex-basis: 800px;
     margin:0 20px;
     gap: 20px;
     text-align: center;
+    /*border: dashed 5px coral;*/
 }
+
 .triangle-section-divider {
     position: absolute;
     bottom: 0;
@@ -110,15 +119,15 @@ h4 {
     width: 0;
     height: 0;
     border-right: 100vw solid transparent;
-    border-bottom: var(--triangle-height) solid var(--wit);
+    border-bottom: var(--triangle-height) solid var(--white);
     transform: rotate(180deg);
 }
 
 button {
     padding: 18px 30px;
     font-size: .7em;
-    background-color: var(--roze);
-    color: var(--wit);
+    background-color: var(--pink);
+    color: var(--white);
     width: max-content;
     margin: 0 auto 30px auto;
     border-radius: 50px;
@@ -128,12 +137,13 @@ button {
     text-transform: uppercase;
     transition: all .1s;
 }
+
 button:active {
     scale: 0.97;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, .5);
 }
-/*--nav-link hover effect--*/
 
+/*--nav-link hover effect--*/
 nav li {
     position: relative;
     padding: 10px 0;
@@ -142,10 +152,10 @@ nav li {
 nav li:before {
     content: "";
     width: 0;
-    height: 4px;
+    height: 3px;
     top: 80%;
     left: 0;
-    background-color: var(--roze);
+    background-color: var(--pink);
     position: absolute;
     border-radius: 10%;
     transition: all .2s linear;
@@ -162,10 +172,10 @@ nav li:hover:before {
     letter-spacing: 1px;
     width: fit-content;
     height: fit-content;
-    /*border: solid 3px #272727;*/
     text-align: center;
     position: relative;
     transition: all .3s;
+    /*border: solid 3px #272727;*/
 }
 .link-wrapper:before {
     position: absolute;
@@ -174,7 +184,7 @@ nav li:hover:before {
     height: 1px;
     top: 50%;
     left: 110%;
-    background-color: var(--paars);
+    background-color: var(--purple);
     transition: all .3s;
 }
 .link-wrapper:hover:before {
@@ -186,10 +196,20 @@ nav li:hover:before {
 
 /* --------------- 4.1 Header ------------------------- */
 header {
-    background: var(--blauw);
-    background: linear-gradient(130deg, rgba(72, 69, 228, 1) 0%, rgba(87, 34, 205, 1) 100%);
-    color: var(--wit);
+    background: var(--blue);
+    color: var(--white);
     position: relative;
+    z-index: 0;
+}
+header:before {
+    background-image: linear-gradient(130deg, rgba(72, 69, 228, 1) 30%, rgba(87, 34, 205, 1) 80%);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    z-index: -1;
 }
 nav {
     padding-left: 20px;
@@ -200,7 +220,6 @@ nav {
     justify-content: center;
 }
 ul {
-    /*border: solid lightblue 5px;*/
     display: flex;
     flex-basis: 1200px;
     justify-content: flex-end;
@@ -208,9 +227,10 @@ ul {
     gap: 40px;
     list-style: none;
     margin: 10px 10px
+    /*border: solid lightblue 5px;*/
 }
 nav a {
-    color: var(--wit);
+    color: var(--white);
     text-decoration: none;
     font-weight: 300;
     font-size: 1rem;
@@ -240,14 +260,16 @@ nav a {
 .header-image-container > img {
     width: 100%;
 }
-/* --------------- 4.2 Introduction ------------------- */
 
+/* --------------- 4.2 Introduction ------------------- */
 .section-intro > div:nth-of-type(1){
     margin-top: 100px;
     margin-bottom: 150px;
 }
+
 .section-intro div p {
     padding: 50px 0;
+    color: var(--black);
 }
 
 .section-intro .inner-container-small:before {
@@ -258,18 +280,19 @@ nav a {
     scale: 25;
     font-weight: 500;
     content: "hello";
-    color: var(--lichtpaars);
+    color: var(--lightpurple);
     z-index: -1;
     opacity: 70%;
     position: relative;
 }
+
 .section-intro .triangle-section-divider {
-    border-bottom: var(--triangle-height) solid var(--lichtgrijs);
+    border-bottom: var(--triangle-height) solid var(--lightgrey);
 }
 
 /* --------------- 4.3 Projects ------------------------- */
 .section-projects {
-    background-color: var(--lichtgrijs);
+    background-color: var(--lightgrey);
     padding-top: 9em;
     padding-bottom: 9em;
     position: relative;
@@ -304,14 +327,17 @@ nav a {
     height: 200px;
     z-index: 1;
     position: relative;
+    color: var(--black);
     /*border: 3px solid red;*/
 }
+
 .card-content-image {
     width: 40px;
     position:absolute;
     top: 40px;
     /*border: 1px solid yellow;*/
 }
+
 .article-content-image {
     box-shadow: 1px 10px 20px rgba(0, 0, 0, 0.4);
     flex-basis: 650px;
@@ -325,12 +351,14 @@ nav a {
     width: 100%;
     object-fit: cover;
     object-position: center;
+    display: block;
 }
 
 .project-article-container:nth-child(even) {
     display: flex;
     flex-direction: row-reverse;
 }
+
 .project-article-container:nth-child(even) > .project-content-container {
     margin: 0 20px 0 40px;
 }
@@ -344,7 +372,7 @@ nav a {
     width: max-content;
     height: max-content;
     font-weight: 900;
-    color: var(--wit);
+    color: var(--white);
     z-index: 0;
     position: absolute;
     top: 0;
@@ -354,24 +382,25 @@ nav a {
 }
 
 /*---------- 4.4 services  -----------*/
-
 .section-services > .inner-container {
     margin-top: 150px;
     margin-bottom: 100px;
 }
+
 .section-services > .inner-container:before {
     content: "services";
     width: fit-content;
     height: fit-content;
     top: -40px;
     left: 48%;
-    color: var(--lichtpaars);
+    color: var(--lightpurple);
     position: relative;
     scale: 14;
     font-weight: 900;
     opacity: 70%;
     z-index: -1;
 }
+
 .service-card-container {
     display: flex;
     flex-wrap: wrap;
@@ -384,34 +413,45 @@ nav a {
     flex-basis: 300px;
     max-width: 350px;
     height: 300px;
-    border: 1px solid var(--paars);
+    border: 1px solid var(--purple);
     padding: 30px;
     display: flex;
     flex-shrink: 1;
     flex-grow: 1;
     flex-direction: column;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-    background-color: var(--wit);
+    background-color: var(--white);
 }
+
 .service-card > img {
     width: 60px;
     margin-bottom: 10px;
 }
+
 .service-card > p {
     font-size: .9rem;
-    color: var(--grijs);
+    color: var(--grey);
     margin-top: 20px;
     font-weight: 300;
 }
 
-
-
 /*---------- 4.5 Form  -----------*/
 .section-form {
-    background: var(--blauw);
-    background: linear-gradient(130deg, rgba(72, 69, 228, 1) 0%, rgba(87, 34, 205, 1) 100%);
+    background: var(--blue);
     position: relative;
+    z-index: 0;
 }
+.section-form:before {
+    background-image: linear-gradient(130deg, rgba(72, 69, 228, 1) 30%, rgba(87, 34, 205, 1) 80%);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    z-index: -1;
+}
+
 .section-form > .inner-container-small {
     margin-top: 100px;
     margin-bottom: 50px;
@@ -419,10 +459,11 @@ nav a {
 
 .section-form > div > h2 {
     font-size: 2em;
-    color: var(--wit);
+    color: var(--white);
 }
+
 .section-form > div > p {
-    color: var(--wit);
+    color: var(--white);
     font-weight: 300;
     font-size: .8em;
 }
@@ -432,14 +473,16 @@ form {
     flex-direction: column;
     gap: 30px;
 }
+
 label{
     display: block;
     text-align: left;
-    color: var(--wit);
+    color: var(--white);
     font-weight: 700;
     letter-spacing: 0;
     font-size: .8em;
 }
+
 input, textarea {
     width: 100%;
     display: block;
@@ -448,13 +491,14 @@ input, textarea {
     border: none;
     resize: none;
 }
+
 input:focus, textarea:focus{
-    outline: 2px solid var(--roze);
-    background-color: var(--lichtpaars);
+    outline: 2px solid var(--pink);
+    background-color: var(--lightpurple);
 }
 
 input::placeholder, textarea::placeholder {
-    color: var(--grijs);
+    color: var(--grey);
     font-size: .9em;
 }
 
@@ -462,25 +506,38 @@ input::placeholder, textarea::placeholder {
 form > button {
     padding: 18px 60px;
 }
+
 /*---------- 4.6 footer  -----------*/
 footer {
-    background-color: var(--zwart);
-    color: var(--wit);
+    background-color: var(--black);
+    color: var(--white);
     text-align: center;
     padding: 20px;
     font-size: .9em;
     font-weight: 300;
 }
+
 /* ------------------------------- 5. Media Queries -------------------------------- */
 @media  screen and (max-width: 768px) {
     body {
-        font-size: 1rem;
+        font-size: .96rem;
     }
+
+    /*--reusable's--*/
+    .triangle-section-divider {
+        border-bottom: var(--triangle-height-small) solid var(--white);
+    }
+
+    .triangle-section-divider-reversed {
+        border-bottom: var(--triangle-height-small) solid var(--white);
+    }
+
     /*--header--*/
     ul {
         justify-content: space-evenly;
         margin-bottom: 0;
     }
+
     nav a {
         font-weight: 600;
     }
@@ -497,6 +554,9 @@ footer {
         letter-spacing: -1px;
     }
 
+    .section-intro > div:nth-of-type(1){
+        margin-bottom: 100px;
+    }
     /*-- projects --*/
     .section-projects .inner-container{
         flex-direction: column;
@@ -593,4 +653,3 @@ footer {
         margin-bottom: 0;
     }
 }
-
